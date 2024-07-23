@@ -1,0 +1,115 @@
+body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #FFA07A 10%, #20B2AA 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .login-container {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 30px 40px;
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        width: 300px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        animation: popUp 0.5s ease-out;
+    }
+
+    .login-container::before {
+        content: '';
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        bottom: -20px;
+        left: -20px;
+        background: linear-gradient(135deg, #FFA07A 10%, #20B2AA 100%);
+        z-index: -1;
+        transform: rotate(10deg);
+        border-radius: 20px;
+        filter: blur(20px);
+        opacity: 0.8;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        color: #333;
+        font-size: 2em;
+        position: relative;
+    }
+
+    h2::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -10px;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background-color: #007BFF;
+        border-radius: 5px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        color: #555;
+        text-align: left;
+    }
+
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus, input[type="password"]:focus {
+        border-color: #007BFF;
+        outline: none;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        padding: 15px;
+        background-color: #007BFF;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+        transform: translateY(-3px);
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes popUp {
+        0% {
+            transform: scale(0.9);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
